@@ -52,20 +52,23 @@ sudo vi /etc/apache2/sites-available/000-default.conf
         
 Note: Only 2 servers were added to the proxy list and also other ways to route traffic aside bytraffic includes byrequests, bybusyness, heartbeats which can be specified in ProxySet lbmethod=? 
 
-<img width="1010" alt="Screenshot 2022-12-02 at 00 30 34" src="https://user-images.githubusercontent.com/61475969/205187686-7fb178ca-f26f-4ae8-ae4f-1d5052b54e47.png">
+<img width="1401" alt="Screenshot 2022-12-02 at 05 13 20" src="https://user-images.githubusercontent.com/61475969/205219793-7376fa17-2f2b-4116-b0f4-1c0d91c564db.png">
+
 
 
 Restart the apache2 server sudo systemctl restart apache2
 
 On the web browser, test the load balancing connection using the public Ip address of our load balancer server.
 
-<img width="908" alt="Screenshot 2022-12-02 at 00 31 57" src="https://user-images.githubusercontent.com/61475969/205187802-97dff995-d9cc-410f-b462-67afa5bb339f.png">
+<img width="1401" alt="Screenshot 2022-12-02 at 05 08 44" src="https://user-images.githubusercontent.com/61475969/205219341-b2329a28-6e1f-44a2-9049-6fdf0030caaf.png">
+
 
 To confirm that traffic is routed evenly to both web servers as the load balancer server is receiving traffic (which in our case is by refreshing the webpage) we can check the logs both servers receive sudo tail -f /var/log/httpd/access_log
 
 Server 1
 
-<img width="877" alt="Screenshot 2022-12-02 at 00 32 58" src="https://user-images.githubusercontent.com/61475969/205187908-a805a874-8434-406e-a724-3bebdf42e601.png">
+<img width="1401" alt="Screenshot 2022-12-02 at 05 11 09" src="https://user-images.githubusercontent.com/61475969/205219596-36f02b0e-4c7e-42e9-8a97-f8cff190b304.png">
+
 
 Server 2
 
